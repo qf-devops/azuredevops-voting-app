@@ -33,3 +33,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/result/Dockerfile'
         tags: |
           $(tag)
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'votingappcontainerRegistrydev'
+        repository: 'examplevotingapp_result'
+        command: 'push'
+        tags: 'latest'
