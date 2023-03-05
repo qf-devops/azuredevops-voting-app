@@ -50,4 +50,5 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/worker/Dockerfile'
         tags: latest
+        arguments: '--build-arg BUILDPLATFORM=linux --build-arg TARGETPLATFORM=linux/amd64'
     
