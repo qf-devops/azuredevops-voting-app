@@ -26,16 +26,17 @@ stages:
       displayName: 'Upgrade Azure CLI'
     - bash: sudo chmod 777 /var/run/docker.sock
       displayName: 'Upgrade Azure CLI'
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/result/Dockerfile'
-        tags: |
-          $(tag)
+    # - task: Docker@2
+    #   displayName: Build an image
+    #   inputs:
+    #     command: build
+    #     dockerfile: '$(Build.SourcesDirectory)
+    #     tags: |
+    #       $(tag)
     - task: Docker@2
       inputs:
         containerRegistry: 'votingappcontainerRegistrydev'
         repository: 'examplevotingapp_result'
-        command: 'push'
-        tags: 'latest'
+        command: 'buildAndPush'
+        Dockerfile: '**/result/Dockerfile'
+    
