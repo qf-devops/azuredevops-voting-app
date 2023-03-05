@@ -24,6 +24,8 @@ stages:
     steps:
     - bash: sudo apt install docker.io -y
       displayName: 'Upgrade Azure CLI'
+    - bash: sudo chmod 777 /var/run/docker.sock
+      displayName: 'Upgrade Azure CLI'
     - task: Docker@2
       displayName: Build an image
       inputs:
