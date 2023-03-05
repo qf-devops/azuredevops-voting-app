@@ -39,4 +39,5 @@ stages:
         repository: 'examplevotingapp_result'
         command: 'buildAndPush'
         Dockerfile: '**/result/Dockerfile'
+        tags: latest
     
